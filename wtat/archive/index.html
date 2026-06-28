@@ -41,11 +41,27 @@
 		hr{
 			width: 400px;
 		}
+		button{
+			font-family: "Amatic SC", sans-serif;
+			  font-weight: 400;
+			  font-style: normal;
+			font-size: 24px;
+		}
         </style>
 		
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+	<script>
+		function load_audio(file_path, source_element_id, audio_element_id, button_element){
+			document.getElementById(source_element_id).src = file_path;
+			button_element.hidden = true;
+			let audio = document.getElementById(audio_element_id);
+			audio.hidden = false;
+			audio.load();
+		}
+	</script>
     </head>
 
     <body>
@@ -63,9 +79,9 @@
 			<div style="margin-bottom: 52px;">
 				<br>
 				<a class="amatic-sc-regular" style="font-size: 3em; margin-bottom: 8px;">guess we remembered</a><br>
-
-				<audio controls style="margin-bottom: 2px;">
-					<source src="/wtat/audio/2026-06-28_we_remembered.mp3" type="audio/mp3">
+				<button onclick='load_audio("/wtat/audio/2026-06-28_we_remembered.mp3", "src_28-06-2026", "audio_28-06-2026", this);'>Load Audio</button>
+				<audio hidden id="audio_28-06-2026" controls style="margin-bottom: 2px;">
+					<source id="src_28-06-2026" type="audio/mp3">
 				Your browser does not support the audio element.
 				</audio><br>
 				
@@ -77,9 +93,9 @@
 				
 				<br>
 				<a class="amatic-sc-regular" style="font-size: 3em; margin-bottom: 8px;">guess we forgot</a><br>
-
-				<audio controls style="margin-bottom: 2px;">
-					<source src="/wtat/audio/2026-06-27_we_forgot.mp3" type="audio/mp3">
+				<button onclick='load_audio("/wtat/audio/2026-06-27_we_forgot.mp3", "src_27-06-2026", "audio_27-06-2026", this);'>Load Audio</button>
+				<audio hidden id="audio_27-06-2026" controls style="margin-bottom: 2px;">
+					<source id="src_27-06-2026" type="audio/mp3">
 				Your browser does not support the audio element.
 				</audio><br>
 				
